@@ -1,7 +1,18 @@
-/*===========================
-    01. Common CSS
-===========================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Space+Mono:400,700&display=swap");
+body {
+  font-weight: normal;
+  font-style: normal;
+  overflow-x: hidden;
+}
+@font-face {
+  font-family: 'HYImpact';
+  src: url('HYImpact-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'HYImpact', sans-serif;
+}
+
 body {
   font-weight: normal;
   font-style: normal;
