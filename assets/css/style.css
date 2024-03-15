@@ -1,18 +1,7 @@
+/*===========================
+    01. Common CSS
+===========================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Space+Mono:400,700&display=swap");
-body {
-  font-weight: normal;
-  font-style: normal;
-  overflow-x: hidden;
-}
-@font-face {
-  font-family: 'HYImpact';
-  src: url('HYImpact-Regular.ttf') format('truetype');
-}
-
-body {
-  font-family: 'HYImpact', sans-serif;
-}
-
 body {
   font-weight: normal;
   font-style: normal;
@@ -1344,3 +1333,18 @@ main .footer .credit {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+@font-face {
+  font-family: 'HYImpact-Regular';
+  src: url('../fonts/HYImpact-Regular.ttf') format('truetype');
+}
+
+main .contact {
+  font-family: "HYImpact-Regular", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+main .dl {
+  font-family: "HYImpact-Regular", sans-serif;
+  color: rgba(71, 181, 255, 0.7);
+}
