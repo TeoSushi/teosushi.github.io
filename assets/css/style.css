@@ -1344,12 +1344,7 @@ main .contact {
   color: rgba(255, 255, 255, 0.7);
 }
 
-main .dl {
-  font-family: "HYImpact-Regular", sans-serif;
-  color: rgba(71, 181, 255, 0.7);
-}
-
-main .ben10 {
+main .linkdl {
   font-family: "HYImpact-Regular", sans-serif;
   color: rgba(71, 181, 255, 0.7);
 }
