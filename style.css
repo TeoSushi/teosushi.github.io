@@ -5440,3 +5440,69 @@ body.dark-theme #stars {
   opacity: 1;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tooltip:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.copied-message {
+  visibility: hidden;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.copied-message.show {
+  visibility: visible;
+  opacity: 1;
+}

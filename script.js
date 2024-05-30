@@ -40325,3 +40325,15 @@ document.getElementById('toggle').addEventListener('change', function() {
   document.body.classList.toggle('dark-theme');
 });
 
+function copyPassword() {
+  const password = "teosushi";
+  navigator.clipboard.writeText(password).then(() => {
+      const copiedMessage = document.getElementById("copiedMessage");
+      copiedMessage.classList.add("show");
+      setTimeout(() => {
+          copiedMessage.classList.remove("show");
+      }, 3000);
+  }).catch(err => {
+      console.error('Failed to copy: ', err);
+  });
+}

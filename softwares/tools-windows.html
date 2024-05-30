@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com -->
-<!-- Last Published: Sat May 18 2024 12:33:37 GMT+0000 (Coordinated Universal Time) -->
 <html class="no-js" lang="">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SP499VN6X"></script>
@@ -58,45 +56,77 @@
         };
     </script>
     <style>
-#toggleButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-}
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Open+Sans+Condensed:wght@700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-#toggleButton:hover {
-    background: rgba(255, 255, 255, 0.9);
-}
-
-#content {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 20px;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
-    padding: 0 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#content.expanded {
-    opacity: 1;
-}
+        .content-container {
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .content-title {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, rgba(255, 182, 193, 0.7), rgba(255, 160, 255, 0.7));
+            color: #ffffff;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .content {
+            display: block;
+            overflow: hidden;
+            max-height: 0;
+            padding: 0 20px;
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .content p {
+            margin: 0;
+            padding: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(90deg, #ff91a4 0%, #ffb0ff 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            align-self: flex-start;
+            margin: 10px 20px;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+        .button i {
+            margin-right: 8px;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #ffb0ff 0%, #ff91a4 100%);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
 <body>
-
 
     <style>
         #overlay {
@@ -111,7 +141,6 @@
         }
     </style>
     <div id="overlay" onclick="redirectAndRemoveOverlay()"></div>
-    </div>
 
     <script>
         function redirectAndRemoveOverlay() {
@@ -189,7 +218,7 @@
         <div class="section">
             <div class="container">
                 <div class="section-top">
-                    <h2 style="font-family: 'Genshin Impact DRIP FONT', sans-serif;" class="heading h1">Tools for Windows</h2>
+                    <h2 style="font-family: 'Genshin Impact DRIP FONT', sans-serif;" class="heading h1">TSToolkit</h2>
                     <a href="/resources.html" class="button light mobile-hidden w-button">See All Resources</a>
                 </div>
 
@@ -205,10 +234,45 @@
                 <li><strong>Cautions:</strong> Significantly reduces system security, making it more vulnerable to malware. Use with extreme caution and only if you have alternative security measures in place.</li>
                 </ul>
                 
-                <button id="toggleButton1">Expand</button>
-                <div id="content1" class="collapsed">
-                  <div style="font-family: 'Open Sans', sans-serif;">
-                    </div>
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content1')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content1" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            </style>
+                            
+                            <h1>DisableDefender.cmd</h1>
+                            
+                            <p>This script is designed to optimize Windows by disabling various Windows Security features. It specifically targets Virus & Threat Protection components like Real-time protection, Cloud-delivered protection, Automatic sample submission, etc.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Admin Rights:</strong> Ensures the script has the necessary permissions to modify system settings.</li>
+                              <li><strong>Disables Windows Security Features:</strong>
+                                <ul>
+                                  <li>Uses <code>REG ADD</code> commands to modify registry values, effectively turning off the listed security features.</li>
+                                  <li>Changes are applied to both 32-bit and 64-bit registry entries.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Provides User Feedback:</strong>
+                                <ul>
+                                  <li>Displays messages indicating the progress of the disabling process.</li>
+                                  <li>Pauses at the end to allow the user to review the output.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Security Implications:</strong> Disabling these features significantly reduces system security and makes it more vulnerable to malware and other threats. Use with caution.</li>
+                              <li><strong>Administrator Privileges:</strong> Requires administrator rights to run successfully.</li>
+                              <li><strong>Registry Modification:</strong> Directly modifies the Windows registry, so errors could cause system instability.</li>
+                            </ul>
+                                                </div>
                 </div>
                 
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">EnableDefender.cmd</h3>
@@ -219,12 +283,63 @@
                 <li><strong>Recommendations:</strong> Keep Windows Defender enabled for basic protection unless you have a robust third-party security solution.</li>
                 </ul>
                 
-                <button id="toggleButton2">Expand</button>
-                <div id="content2" class="collapsed">
-                  <div style="font-family: 'Open Sans', sans-serif;">
-                    </div>
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content2')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content2" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            </style>
+                            
+                            <h1>EnableDefender.cmd</h1>
+                            
+                            <p>This script is designed to re-enable Windows Security (Windows Defender) on a system where it might have been disabled, potentially by an administrator or another script.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Clears Console:</strong> The <code>cls</code> command clears the console screen for clean output.</li>
+                              <li><strong>Re-enables Windows Defender Components:</strong>
+                                <ul>
+                                  <li>Uses <code>reg delete</code> commands to remove specific registry keys that disable various aspects of Windows Defender:
+                                    <ul>
+                                      <li>Real-Time Protection</li>
+                                      <li>Antivirus engine</li>
+                                      <li>Security Center (including notifications)</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li><strong>Starts Windows Security Services:</strong>
+                                <ul>
+                                  <li>Uses <code>net start</code> commands to start three essential services:
+                                    <ul>
+                                      <li><code>WinDefend</code>: The main Windows Defender service.</li>
+                                      <li><code>WdNisSvc</code>: Network Inspection Service, monitors network traffic for threats.</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li><strong>Provides User Feedback:</strong>
+                                <ul>
+                                  <li>Prints a success message confirming Windows Security is enabled.</li>
+                                  <li>Notes that the system's virus protection may have been previously managed by an organization.</li>
+                                  <li>Briefly pauses for user acknowledgement.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Privileges:</strong> Required to run this script due to system modifications.</li>
+                              <li><strong>Restores Default Protection:</strong> This script restores the default Windows Security settings. If you had other security software that disabled Windows Defender, you'll need to reconfigure it separately.</li>
+                              <li><strong>Security Best Practices:</strong> While Windows Security offers basic protection, consider additional security software for enhanced defense against threats.</li>
+                            </ul>
+                                                </div>
                 </div>
-                
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">EnableWindowsUpdate.cmd</h3>
                 <ul style="font-family: 'Open Sans', sans-serif;">
                 <li><strong>Purpose:</strong> Re-enables Windows Update if it has been paused or disabled.</li>
@@ -233,6 +348,56 @@
                 <li><strong>Caution:</strong> Modify the registry with care, as incorrect changes can affect system stability.</li>
                 </ul>
                     
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content3')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content3" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            </style>
+                            
+                            <h1>EnableWindowsUpdate.cmd</h1>
+                            
+                            <p>This script is designed to re-enable Windows Update on your system if it has been paused or disabled.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script runs with administrator permissions required for system modifications.</li>
+                                  <li>Prompts for elevation and exits if not run as administrator.</li>
+                                  <li>Double-checks administrator privileges using <code>net session</code>.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Deletes Registry Keys:</strong>
+                                <ul>
+                                  <li>Removes specific registry keys that control Windows Update settings using <code>REG DELETE</code>.</li>
+                                  <li>Suppresses command output with <code>>nul</code> for a clean console.</li>
+                                  </ul>
+                              </li>
+                              <li><strong>Provides Feedback:</strong>
+                                <ul>
+                                  <li>Prints a success message: "Windows Update đã được bật lại!" (Windows Update has been re-enabled!)</li>
+                                  <li>Pauses briefly to allow the user to read the message before the console window closes.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Absolutely essential for this script to function.</li>
+                              <li><strong>Registry Modification:</strong> Directly modifies the Windows registry, so exercise caution.</li>
+                              <li><strong>Resets Windows Update:</strong> Reverts to default settings, removing any pauses or customizations.</li>
+                              <li><strong>Potential Impact:</strong> Any specific update preferences you had will be lost and need to be re-configured.</li>
+                            </ul>
+                            
+                            <p><strong>Note:</strong> Before running this script, create a system restore point to revert any unwanted changes. If you intentionally disabled Windows Update, ensure you want to re-enable it.</p>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">Fast Startup.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -241,6 +406,64 @@
                 <li><strong>Potential Issues:</strong> Superfetch may cause problems on systems with limited resources. Hibernation requires significant disk space.</li>
                 </ul>
                 
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content4')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content4" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; } /* Style code elements */
+                            </style>
+                            
+                            <h1>Fast Startup.cmd</h1>
+                            
+                            <p>This script is designed to optimize Windows performance by adjusting certain system settings and features.</p>
+                            
+                            <h2>Key Actions</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script has the necessary permissions to modify system settings.</li>
+                                  <li>Prompts the user to elevate privileges if not running as administrator.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Displays an Intro Animation:</strong>
+                                <ul>
+                                  <li>Creates a stylized text animation that says "Powered by TEO SUSHI" using ANSI escape codes for color and formatting.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Enables Hibernation and Fast Startup:</strong>
+                                <ul>
+                                  <li>Uses <code>powercfg.exe</code> to enable hibernation and fast startup features for improved boot times.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Enables Sysmain Service and Superfetch:</strong>
+                                <ul>
+                                  <li>Modifies the registry to set the Sysmain service to start automatically.</li>
+                                  <li>Starts the Sysmain service, which is responsible for Superfetch (preloading frequently used applications).</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required to modify system settings.</li>
+                              <li><strong>Performance Optimization:</strong> Aims to improve boot times and application loading speed through hibernation, fast startup, Sysmain, and Superfetch.</li>
+                              <li><strong>Compatibility:</strong> Not suitable for all systems. Understand the implications before running the script.</li>
+                            </ul>
+                            
+                            <h2>Caveats</h2>
+                            
+                            <ul>
+                              <li><strong>Superfetch:</strong> May cause issues on systems with limited resources. Disable if you encounter problems.</li>
+                              <li><strong>Hibernation:</strong> Requires significant disk space (roughly equal to your RAM). Ensure sufficient free space before enabling.</li>
+                            </ul>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">GamingMode.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -249,6 +472,70 @@
                 <li><strong>Impact:</strong> Can significantly increase power consumption, especially on laptops.</li>
                 </ul>
                 
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content5')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content5" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>GamingMode.cmd</h1>
+                            
+                            <p>This script appears to be designed to optimize Windows for gaming performance by enabling Game Mode and making the Ultimate Performance power plan available.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script has the necessary permissions to modify system settings.</li>
+                                  <li>Prompts the user to elevate privileges if not running as administrator.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Displays an Intro Animation:</strong>
+                                <ul>
+                                  <li>Creates a stylized text animation that says "Powered by TEO SUSHI" using ANSI escape codes.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Enables Ultimate Performance Power Plan:</strong>
+                                <ul>
+                                  <li>Uses <code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code> to duplicate the GUID associated with the Ultimate Performance power plan. This makes it available on systems where it's hidden.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Opens Power Options:</strong>
+                                <ul>
+                                  <li>Executes <code>powercfg.cpl</code> to open the Power Options control panel, allowing manual selection of power plans.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required for modifying power settings.</li>
+                              <li><strong>Game Mode and Ultimate Performance:</strong>
+                                <ul>
+                                  <li><strong>Game Mode:</strong> Prioritizes gaming performance by optimizing system resources.</li>
+                                  <li><strong>Ultimate Performance:</strong> Maximizes performance by disabling power-saving features (may increase power consumption).</li>
+                                </ul>
+                              </li>
+                            </ul>
+                            
+                            <h2>Caveats</h2>
+                            
+                            <ul>
+                              <li><strong>Power Consumption:</strong> Ultimate Performance can significantly increase power usage, especially on laptops.</li>
+                              <li><strong>Manual Selection:</strong> The script only makes Ultimate Performance available; the user must select it manually.</li>
+                              <li><strong>Limited Effectiveness:</strong> The impact of Game Mode and Ultimate Performance varies depending on hardware and games.</li>
+                            </ul>
+                            
+                            <p><strong>Important Note:</strong> Consider whether maximum performance is worth the increased power usage before running this script. If battery life is a priority, Ultimate Performance may not be the best choice.</p>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">KillAdobeCloud.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -257,6 +544,76 @@
                 <li><strong>Caution:</strong> May result in loss of unsaved work. Use only when necessary.</li>
                 </ul>
                     
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content6')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content6" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>KillAdobeCloud.cmd</h1>
+                            
+                            <p>This script is designed to forcefully close all running Adobe Creative Cloud applications and their associated background processes.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script has the necessary permissions to terminate processes forcefully.</li>
+                                  <li>Prompts the user to elevate privileges if not running as administrator.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Forcefully Terminates Adobe Processes:</strong>
+                                <ul>
+                                  <li>Uses the <code>taskkill /f /im</code> command to end the following Adobe processes:</li>
+                                  <ul>
+                                      <li>`Creative Cloud.exe`</li>
+                                      <li>`Adobe Desktop Service.exe`</li>
+                                      <li>`Adobe Crash Reporter.exe`</li>
+                                      <li>`CCXProcess.exe`</li>
+                                      <li>`AdobeIPCBroker.exe`</li>
+                                      <li>`AdobeNotificationClient.exe`</li>
+                                      <li>`Adobe Update Service.exe`</li>
+                                      <li>`Adobe Acrobat Update Service.exe`</li>
+                                      <li>`AGMService.exe` (Adobe Genuine Monitor Service)</li>
+                                      <li>`AGSService.exe` (Adobe Genuine Software Service)</li>
+                                      <li>`Adobe Genuine Software Integrity Service.exe`</li>
+                                      <li>`CoreSync.exe`</li>
+                                      <li>`CCLibrary.exe`</li>
+                                      <li>`Creative Cloud Helper.exe`</li>
+                                      <li>`Adobe Crash Processor.exe`</li>
+                                  </ul>
+                                </ul>
+                              </li>
+                              <li><strong>Provides Feedback:</strong>
+                                <ul>
+                                  <li>Prints a message indicating that all Adobe Creative Cloud applications have been closed.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Forceful Termination:</strong> The <code>/f</code> (force) flag ensures processes are terminated, even if unresponsive.</li>
+                              <li><strong>Process List:</strong> Targets specific Adobe processes associated with Creative Cloud applications.</li>
+                              <li><strong>Potential Disruption:</strong> Forcefully ending processes may result in unsaved work loss. Use with caution.</li>
+                            </ul>
+                            
+                            <h2>Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Why Force Close?</strong> Use when Adobe processes become unresponsive or problematic.</li>
+                              <li><strong>Alternatives:</strong> Try closing applications normally via Task Manager or Adobe's tools before using this script.</li>
+                              <li><strong>Regular Use:</strong> Not ideal for regular use, as it could disrupt your workflow. Address the root causes of Adobe issues directly.</li>
+                            </ul>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">Optimize Windows.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -265,6 +622,69 @@
                 <li><strong>Impact:</strong> Can improve system performance but may require a system restore point before running.</li>
                 </ul>
                     
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content7')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content7" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>Optimize Windows.cmd</h1>
+                            
+                            <p>This script aims to optimize your Windows system by performing a series of cleaning and optimization tasks.</p>
+                            
+                            <h2>Main Functions</h2>
+                            
+                            <ol>
+                              <li><strong>Administrator Check and Intro:</strong>
+                                <ul>
+                                  <li>Ensures the script runs with administrator privileges (required for system modifications).</li>
+                                  <li>Displays a stylized "Powered by TEO SUSHI" animation.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Clearing Browser Cache and Temporary Files:</strong>
+                                <ul>
+                                  <li>Deletes temporary internet files and cache from major web browsers (Chrome, Firefox, Internet Explorer, Edge).</li>
+                                  <li>Empties the Recycle Bin across multiple drives.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Initial System Cleanup:</strong>
+                                <ul>
+                                  <li>Deletes various temporary files and log folders in user and system directories.</li>
+                                  <li>Clears event logs.</li>
+                                  <li>Modifies registry settings for memory management and file system access.</li>
+                                  <li>Deletes specific file paths containing potential temporary or unused data.</li>
+                                  <li>Runs Disk Cleanup to remove unnecessary files.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Disk Defragmentation and Optimization:</strong>
+                                <ul>
+                                  <li>Analyzes and defragments all logical drives to improve file access speed.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Deep Cleanup (Windows Update and Temporary Files):</strong>
+                                <ul>
+                                  <li>Removes outdated Windows Update components using DISM tools.</li>
+                                  <li>Deletes temporary files in various system and user folders.</li>
+                                  <li>Clears cache for Internet Explorer and Edge.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required for proper functioning.</li>
+                              <li><strong>System Optimization:</strong> Designed to improve performance by cleaning up files, optimizing storage, and managing updates.</li>
+                              <li><strong>Possible Impact:</strong> Deleting files and modifying the registry can potentially cause issues if not done carefully.</li>
+                              <li><strong>Backups:</strong> It's highly recommended to create a system restore point before running this script.</li>
+                            </ul>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">PauseWUpdate.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -273,6 +693,70 @@
                 <li><strong>Risks:</strong> Leaves the system vulnerable to security threats. Use with extreme caution and only if absolutely necessary.</li>
                 </ul>
                 
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content8')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content8" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>PauseWUpdate.cmd</h1>
+                            
+                            <p>This script appears to be designed to pause Windows Update until the year 2050.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script has the necessary permissions to modify system settings.</li>
+                                  <li>Prompts the user to elevate privileges if not running as administrator.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Displays an Intro Animation:</strong>
+                                <ul>
+                                  <li>Creates a stylized text animation that says "Powered by TEO SUSHI" followed by "STAY HOME #COVID19" using ANSI escape codes.</li>
+                                  <li>Credits the intro to "Ghost Spectre."</li>
+                                </ul>
+                              </li>
+                              <li><strong>Modifies Registry to Pause Windows Updates:</strong>
+                                <ul>
+                                  <li>Uses the <code>REG ADD</code> command to add or modify several registry keys and values under <code>HKLM\SOFTWARE\Microsoft\WindowsUpdate</code>.</li>
+                                  <li>These changes set parameters indicating updates are paused until 2050.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Provides Feedback:</strong>
+                                <ul>
+                                  <li>Prints a message: "Your Windows Update now is pause until 2050!!!!!!"</li>
+                                  <li>Pauses for 4 seconds to allow the user to read the message.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required to modify the registry.</li>
+                              <li><strong>Pause Windows Updates:</strong> Attempts to disable automatic updates by manipulating registry settings. Effectiveness may vary depending on your Windows version and configuration.</li>
+                              <li><strong>Potential Risks:</strong> Modifying the registry incorrectly can lead to system instability or unexpected behavior.</li>
+                              <li><strong>Security Concerns:</strong> Disabling automatic updates can leave your system vulnerable to security threats. Keeping updates enabled is generally recommended for security and stability.</li>
+                            </ul>
+                            
+                            <h2>Important Considerations</h2>
+                            
+                            <ul>
+                              <li><strong>Windows Update is Essential:</strong> Updates often contain crucial security patches and bug fixes. Disabling them for extended periods can expose your system to risks.</li>
+                              <li><strong>Alternative Options:</strong> If you're concerned about interruptions, configure active hours or set a metered connection to limit automatic downloads.</li>
+                              <li><strong>Registry Backup:</strong> Create a backup of the registry before making any changes to ensure you can restore it if needed.</li>
+                            </ul>
+                            
+                            <p><strong>Disclaimer:</strong> Disabling Windows Updates for an extended period is not recommended due to the potential security risks involved. Use this script at your own discretion and be aware of the consequences.</p>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">RemoveAppsServices.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -281,6 +765,76 @@
                 <li><strong>Impact:</strong> May affect the functionality of certain Windows features.</li>
                 </ul>
                     
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content9')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content9" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>RemoveAppsServices.cmd</h1>
+                            
+                            <p>This script is designed to optimize Windows by disabling various services and scheduled tasks deemed unnecessary for everyday use. It also enhances privacy by disabling telemetry-related services and tasks.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong> Ensures the script has the necessary permissions.</li>
+                              <li><strong>Displays an Intro Animation:</strong> Shows a stylized "Powered by TEO SUSHI" animation.</li>
+                              <li><strong>Disables Services:</strong>
+                                <ul>
+                                  <li>Uses <code>sc config</code> to disable services like:</li>
+                                  <ul>
+                                    <li><code>AssignedAccessManager</code>, <code>BitLockerDriveEncryption</code></li>
+                                    <li><code>DiagTrack</code>, <code>lfsvc</code> (Geolocation)</li>
+                                    <li><code>MapsBroker</code>, <code>WPCSvc</code> (Parental Controls)</li>
+                                    <li><code>TermService</code>, <code>UmRdpService</code> (Remote Desktop)</li>
+                                    <li><code>SensorDataService</code>, <code>WbioSrvc</code> (Biometrics)</li>
+                                    <li>And more...</li>
+                                  </ul>
+                                </ul>
+                              </li>
+                              <li><strong>Disables Scheduled Tasks:</strong>
+                                <ul>
+                                  <li>Uses <code>schtasks /Change /TN</code> to disable tasks related to:</li>
+                                  <ul>
+                                    <li>SmartScreen, Application Experience, Autochk</li>
+                                    <li>CloudExperienceHost, Customer Experience Improvement Program</li>
+                                    <li>Disk diagnostics, File History, Maintenance</li>
+                                    <li>Windows Error Reporting, Windows Update, License Manager</li>
+                                    <li>And more...</li>
+                                  </ul>
+                                </ul>
+                              </li>
+                              <li><strong>Additional Registry Modifications:</strong>
+                                <ul>
+                                  <li>Modifies registry keys related to:</li>
+                                  <ul>
+                                    <li>Data collection, Telemetry</li>
+                                    <li>Privacy settings, Application behavior</li>
+                                  </ul>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required for functionality.</li>
+                              <li><strong>Performance and Privacy:</strong> Aims to improve both by disabling resource-intensive and data-collecting components.</li>
+                              <li><strong>Impact on Functionality:</strong> Disabling services may affect specific features.</li>
+                              <li><strong>Caution:</strong> Modifying system services and tasks can have unintended consequences.</li>
+                            </ul>
+                            
+                            <h2>Recommendation</h2>
+                            
+                            <p>Create a system restore point before running this script. Carefully consider which services and tasks to disable based on your needs.</p>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">RemoveBloatware.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -289,6 +843,58 @@
                 <li><strong>Considerations:</strong> Uninstalling some apps may affect other features or applications.</li>
                 </ul>
                 
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content10')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content10" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>RemoveBloatware.cmd (PowerShell)</h1>
+                            
+                            <p>This PowerShell script removes unnecessary default apps and bloatware from Windows 10 and Windows 11.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Sets Execution Policy:</strong>
+                                <ul>
+                                  <li><code>Set-ExecutionPolicy RemoteSigned</code> allows running the script only if it's signed by a trusted publisher or on your local machine.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Removes Specific Windows Apps:</strong>
+                                <ul>
+                                  <li>Uninstalls pre-installed apps from Windows 10 and 11 using <code>Get-AppxPackage</code> and <code>Remove-AppxPackage</code>.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Removes Additional Bloatware:</strong>
+                                <ul>
+                                  <li>Defines a list of common bloatware apps (games, social media, etc.).</li>
+                                  <li>Iterates through the list and uninstalls each app.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Provides Feedback:</strong>
+                                <ul>
+                                  <li>Displays a message indicating the removal of unnecessary apps and bloatware.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Privileges:</strong> Likely required to run this script. Open PowerShell as an administrator.</li>
+                              <li><strong>Targeted Removal:</strong> Focuses on pre-installed apps and common bloatware.</li>
+                              <li><strong>Customizable:</strong> Modify the <code>$bloatwareApps</code> list to suit your preferences.</li>
+                              <li><strong>Potential Issues:</strong> Uninstalling apps could affect other features. Understand the impact before running.</li>
+                              <li><strong>Backups:</strong> Create a system restore point before removing apps to revert any changes if needed.</li>
+                            </ul>
+                                                </div>
+                </div>
+
                 <h3 style="font-family: 'Open Sans Condensed', sans-serif; font-weight: 700;">RestoreWifi.cmd</h3>
                 
                 <ul style="font-family: 'Open Sans', sans-serif;">
@@ -299,7 +905,91 @@
                 
                 <p style="font-family: 'Open Sans', sans-serif;">Remember to use these scripts with caution and always create a system restore point before making any significant changes to your system.</p>
                 
+                <div class="content-container">
+                    <p class="content-title">View details</p>
+                    <button class="button" onclick="toggleContent('content11')"><i class="fas fa-plus"></i>Expand</button>
+                    <div id="content11" class="content">
+                        <style>
+                            body { font-family: 'Open Sans', sans-serif; }
+                            h1, h2 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 700; }
+                            code { font-family: monospace; background-color: #f0f0f0; padding: 2px; border-radius: 3px; }
+                            </style>
+                            
+                            <h1>RestoreWifi.cmd</h1>
+                            
+                            <p>This script is designed to reset network settings on your Windows machine.</p>
+                            
+                            <h2>How It Works</h2>
+                            
+                            <ol>
+                              <li><strong>Checks for Administrator Privileges:</strong>
+                                <ul>
+                                  <li>Ensures the script has the necessary permissions to modify network configurations.</li>
+                                  <li>Prompts the user to elevate privileges if not running as administrator.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Resets Winsock and IP Settings:</strong>
+                                <ul>
+                                  <li>Executes <code>netsh winsock reset</code> to reset the Winsock catalog for network communication.</li>
+                                  <li>Executes <code>netsh int ip reset</code> to reset TCP/IP settings to defaults.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Releases and Renews IP Address:</strong>
+                                <ul>
+                                  <li>Executes <code>ipconfig /release</code> to release your current IP address.</li>
+                                  <li>Executes <code>ipconfig /renew</code> to request a new IP address from the DHCP server.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Flushes DNS Cache:</strong>
+                                <ul>
+                                  <li>Executes <code>ipconfig /flushdns</code> to clear the DNS cache.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Resets Wi-Fi Connection:</strong>
+                                <ul>
+                                  <li>Disables and re-enables your Wi-Fi adapter using <code>netsh interface set interface "Wi-Fi" admin=disable</code> and <code>netsh interface set interface "Wi-Fi" admin=enable</code>.</li>
+                                </ul>
+                              </li>
+                              <li><strong>Provides Feedback:</strong>
+                                <ul>
+                                  <li>Prints messages indicating the progress of each step.</li>
+                                  <li>Pauses at the end for user review.</li>
+                                </ul>
+                              </li>
+                            </ol>
+                            
+                            <h2>Key Points</h2>
+                            
+                            <ul>
+                              <li><strong>Administrator Rights:</strong> Required for executing network commands.</li>
+                              <li><strong>Resets Network Configuration:</strong> Helpful for network connectivity issues.</li>
+                              <li><strong>Temporary Disruption:</strong> Will temporarily disconnect you from the internet.</li>
+                              <li><strong>Wi-Fi Name:</strong> Replace "Wi-Fi" with your actual Wi-Fi interface name if it differs.</li>
+                            </ul>
+                                                </div>
+                </div>
 
+                <br>
+                <div style="font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 30px;">
+                    TSToolkit (Teo Sushi Windows Toolkit)
+                </div>
+                <br>
+                <div>
+                    <div class="tooltip" onclick="copyPassword()">
+                        Password: teosushi
+                        <span class="tooltiptext">Click to copy</span>
+                    </div>
+                
+                    <div id="copiedMessage" class="copied-message">Copied to clipboard</div>
+                
+                </div>
+                <br>
+                <button class="button-dl" onclick="window.open('https://tinyurl.com/y4485v65', '_blank')">
+                    <span class="button_lg-dl">
+                        <span class="button_sl-dl"></span>
+                        <span class="button_text-dl" style="font-family: 'Open Sans', sans-serif;">Download Now</span>
+                    </span>
+                </button>
                 </div>
                 
             </div>
@@ -355,35 +1045,41 @@
     <script src="../script.js" type="text/javascript"></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = [
-        { button: document.getElementById("toggleButton1"), content: document.getElementById("content1") },
-        { button: document.getElementById("toggleButton2"), content: document.getElementById("content2") },
-        { button: document.getElementById("toggleButton3"), content: document.getElementById("content3") },
-        { button: document.getElementById("toggleButton4"), content: document.getElementById("content4") },
-        { button: document.getElementById("toggleButton5"), content: document.getElementById("content5") },
-        { button: document.getElementById("toggleButton6"), content: document.getElementById("content6") },
-        { button: document.getElementById("toggleButton7"), content: document.getElementById("content7") },
-        { button: document.getElementById("toggleButton8"), content: document.getElementById("content8") },
-    ];
-
-    buttons.forEach(({ button, content }) => {
-        button.addEventListener("click", function() {
-            if (content.classList.contains("collapsed")) {
-                const scrollHeight = content.scrollHeight; // Get the full height of the content
-                content.style.maxHeight = scrollHeight + "px"; // Set the max-height to the full height
-                content.classList.remove("collapsed");
-                content.classList.add("expanded");
-                button.textContent = "Collapse";
-            } else {
-                content.style.maxHeight = "0px"; // Collapse the content
-                content.classList.remove("expanded");
-                content.classList.add("collapsed");
-                button.textContent = "Expand";
-            }
+function toggleContent(contentId) {
+    const content = document.getElementById(contentId);
+    const button = content.previousElementSibling;
+    const icon = button.querySelector('i');
+    
+    if (content.style.maxHeight === "0px" || content.style.maxHeight === "") {
+        content.style.transition = "none"; // Disable transition initially
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.paddingTop = "20px";
+        content.style.paddingBottom = "20px";
+        
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                content.style.transition = "max-height 0.3s ease, padding 0.3s ease"; // Re-enable transition
+                content.style.maxHeight = "none"; // Allow content to expand fully
+            });
         });
-    });
-});
+        
+        button.textContent = " Collapse";
+        icon.className = 'fas fa-minus';
+        button.prepend(icon);
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px"; // Set maxHeight to current scrollHeight
+        requestAnimationFrame(() => {
+            content.style.transition = "max-height 0.3s ease, padding 0.3s ease"; // Ensure transition is applied
+            content.style.maxHeight = "0";
+            content.style.paddingTop = "0";
+            content.style.paddingBottom = "0";
+        });
+        
+        button.textContent = " Expand";
+        icon.className = 'fas fa-plus';
+        button.prepend(icon);
+    }
+}
 
     </script>
 </body>
